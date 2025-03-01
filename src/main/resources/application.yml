@@ -1,0 +1,14 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: spring-boot-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_book_app
+    password: postgres
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
