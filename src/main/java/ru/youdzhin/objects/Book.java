@@ -1,15 +1,15 @@
 package ru.youdzhin.objects;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(
@@ -22,7 +22,9 @@ public class Book {
     )
     private Long id;
 
-    @ManyToMany
+    @ManyToMany (
+            cascade = CascadeType.ALL
+    )
     @JoinTable (
             name = "book_author",
             joinColumns = @JoinColumn (name = "book_id"),
@@ -44,5 +46,4 @@ public class Book {
     private Boolean status;
 
     private byte rating;
-
 }

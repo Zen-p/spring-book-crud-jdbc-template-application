@@ -29,6 +29,9 @@
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8ae99410-77c0-4f08-b119-013fc8ef1c11" />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="8ae99410-77c0-4f08-b119-013fc8ef1c11" dataset="information_schema.sql_sizing" active-filter-id="" />
+  </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
   </component>
@@ -54,12 +57,12 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="5432" />
-          <database value="postgres" />
+          <database value="spring_book_app" />
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
-          <deprecated-pwd value="" />
+          <deprecated-pwd value="cG9zdGdyZXM=" />
         </database>
         <properties>
           <auto-commit value="true" />

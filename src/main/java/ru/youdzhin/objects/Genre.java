@@ -23,6 +23,7 @@ public class Genre {
 
     @OneToMany (
             fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
             mappedBy = "genre"
     )
     private List<Book> books_by_genre;
