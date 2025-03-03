@@ -10,9 +10,10 @@ import java.util.List;
 public record BookDTO (
         List<Author> author,
         Genre genre,
-        short yearOfPublication,
+        Short yearOfPublication,
         String description,
         Boolean status,
-        byte rating
+        Byte rating
 ) {
+    
 }

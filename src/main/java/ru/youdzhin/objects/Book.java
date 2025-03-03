@@ -1,5 +1,6 @@
 package ru.youdzhin.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,13 +31,15 @@ public class Book {
             joinColumns = @JoinColumn (name = "book_id"),
             inverseJoinColumns = @JoinColumn (name = "author_id")
     )
-    private List<Author> author;
+    @JsonIgnoreProperties("books")
+    private List<Author> authors;
 
     @ManyToOne (
             optional = false,
             cascade = CascadeType.ALL
     )
     @JoinColumn (name = "genre_id")
+    @JsonIgnoreProperties("books_by_genre")
     private Genre genre;
 
     private short yearOfPublication;

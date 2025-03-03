@@ -31,7 +31,20 @@ public class BookContrller {
         bookService.saveBook(book);
     }
 
+    @PatchMapping("/{id}")
+    public void changeBook (@PathVariable("id") long id, @RequestBody BookDTO book) {
+        bookService.changeBook(id, book);
+    }
 
+    @DeleteMapping("/{id}")
+    public void deleteBook (@PathVariable("id") long id) {
+        bookService.deleteBook(id);
+    }
 
+    @GetMapping("/search")
+    public List<Book> getByRating (
+            @RequestParam(name = "rat") Byte rating) {
+        return bookService.findByGenre(rating);
+    }
 
 }
