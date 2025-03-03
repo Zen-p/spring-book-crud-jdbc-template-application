@@ -45,6 +45,7 @@ public class BookContrller {
     public List<Book> getByRating (
             @RequestParam(name = "rat") Byte rating) {
         return bookService.findByGenre(rating);
+
     }
 
 }
