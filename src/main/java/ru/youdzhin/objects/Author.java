@@ -4,6 +4,7 @@ package ru.youdzhin.objects;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Author {
 
     @Id
@@ -29,14 +31,8 @@ public class Author {
     private String biography;
 
     @ManyToMany (
-//            cascade = CascadeType.ALL
             mappedBy = "authors"
     )
     @JsonIgnoreProperties("authors")
-//    @JoinTable (
-//            name = "book_author",
-//            joinColumns = @JoinColumn (name = "author_id"),
-//            inverseJoinColumns = @JoinColumn (name = "book_id")
-//    )
     private List<Book> books;
 }

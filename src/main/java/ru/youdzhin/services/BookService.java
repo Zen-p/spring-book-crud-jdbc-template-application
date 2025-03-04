@@ -40,23 +40,22 @@ public class BookService {
         Book existingBook = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found"));
 
-        // Обновляем только те поля, которые переданы в запросе
         if (book.author() != null) {
             existingBook.setAuthors(book.author());
         }
-        if (book.genre() != null) {
+        else if (book.genre() != null) {
             existingBook.setGenre(book.genre());
         }
-        if (book.yearOfPublication() != null) {
+        else if (book.yearOfPublication() != null) {
             existingBook.setYearOfPublication(book.yearOfPublication());
         }
-        if (book.description() != null) {
+        else if (book.description() != null) {
             existingBook.setDescription(book.description());
         }
-        if (book.status() != null) {
+        else if (book.status() != null) {
             existingBook.setStatus(book.status());
         }
-        if (book.rating() != null) {
+        else if (book.rating() != null) {
             existingBook.setRating(book.rating());
         }
 
