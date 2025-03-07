@@ -3,7 +3,7 @@
 * GET /api/books — получить список всех книг.
 * GET /api/books/{id} — получить информацию о конкретной книге.
 * POST /api/books — добавить новую книгу.
-* PUT /api/books/{id} — обновить информацию о книге.
+* PATCH /api/books/{id} — обновить информацию о книге.
 * DELETE /api/books/{id} — удалить книгу.
 * GET /api/books/search?rat=num — поиск книг по рейтингу.
 
@@ -11,5 +11,5 @@
 * GET /api/authors — получить список всех авторов.
 * GET /api/authors/{id} — получить информацию о конкретном авторе.
 * POST /api/authors — добавить нового автора.
-* PUT /api/authors/{id} — обновить информацию об авторе.
+* PATCH /api/authors/{id} — обновить информацию об авторе.
 * DELETE /api/authors/{id} — удалить автора.
