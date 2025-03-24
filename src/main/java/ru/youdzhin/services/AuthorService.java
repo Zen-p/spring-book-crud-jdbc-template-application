@@ -1,6 +1,8 @@
 package ru.youdzhin.services;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import ru.youdzhin.DTOs.AuthorDTO;
 import ru.youdzhin.objects.Author;
@@ -10,6 +12,9 @@ import java.util.List;
 
 @Service
 public class AuthorService {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
 
     public Author getById (Long id) {
